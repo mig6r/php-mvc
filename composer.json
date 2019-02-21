@@ -1,0 +1,11 @@
+{
+    "name": "seb/phpinitiation",
+    "description": "description",
+    "authors": [
+        {
+            "name": "seb o",
+            "email": "s.opros@gmail.com"
+        }
+    ],
+    "require": {}
+}
