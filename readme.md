@@ -1,5 +1,20 @@
-## On installe boostrap / jquery / popper.js
+# PHP Sigin / Login / Logout
 
-npm install boostrap...
+Routing controller / MVC
 
-On met les liens dans le start et dans le end
+Using composer top manage packages and Webpack to compile SCSS
+
+## Demo
+
+<img src="demo.gif">
+
+
+## Install
+
+
+## Usage
+
+
+## Copyright
+
+This project is licensed under the MIT License - see the [license](LICENSE) file for details.

@@ -48,6 +48,8 @@ class UsersController extends Controller
 
                     $repository = new userLoginRepository();
                     $repository->persist($userLogin);
+                    header('Location: login');
+                    exit;
 
                 } catch (\PDOException $e) {
 
