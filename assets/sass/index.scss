@@ -1,0 +1,22 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+  titre {
+    color:red;
+  }
+
+#espaceur {
+  padding-top:66px;;
+}
+
+.navbar-nav a {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-nav a:hover{
+  text-decoration: none;
+}
+
+.navbar-nav li{
+  padding-right: 2em;
+}

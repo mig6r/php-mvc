@@ -1,0 +1,50 @@
+{
+  "home_read": {
+
+    "url": "/",
+    "controller": "Home/HomeController",
+    "action": "read",
+    "method": "GET"
+
+  },
+  "contact_read": {
+
+    "url": "/contact",
+    "controller": "Contact/ContactController",
+    "action": "read",
+    "method": "GET"
+
+  },
+  "user_read": {
+
+  "url": "/users",
+  "controller": "Users/UsersController",
+  "action": "read",
+  "method": "GET"
+
+},
+  "users_create": {
+
+    "url": "/signin",
+    "controller": "Users/UsersController",
+    "action": "new",
+    "method": "GET,POST"
+
+  },
+  "user_login": {
+
+    "url": "/login",
+    "controller": "Login/LoginController",
+    "action": "login",
+    "method": "GET,POST"
+
+  },
+  "user_logout": {
+
+    "url": "/logout",
+    "controller": "Login/LoginController",
+    "action": "logout",
+    "method": "GET"
+
+  }
+}
