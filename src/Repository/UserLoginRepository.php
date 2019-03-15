@@ -13,7 +13,8 @@ use PHPInitiation\Model\User\UserLogin;
 class UserLoginRepository
 {
 
-    public function persist(UserLogin $userLogin){
+    public function persist(UserLogin $userLogin):int
+    {
         $password = password_hash($userLogin->getPassword(), PASSWORD_DEFAULT);
         // 1 - Récupérer le connection;
         $dbh=Connection::getConnection();
@@ -26,6 +27,8 @@ class UserLoginRepository
         $sth->bindValue(":password", $password);
         // 4 Executer
         $sth->execute();
+        return $dbh->lastInsertId();
+
     }
 
 
@@ -33,7 +36,7 @@ class UserLoginRepository
     {
 
         $dbh=Connection::getConnection();
-        $sql = "SELECT `email`, `password` FROM `user_login`";
+        $sql = "SELECT `id`, `email`, `password` FROM `user_login`";
         $sth = $dbh->prepare($sql);
         $sth->execute();
         //on pourait indiquer le nom de la classe par le chemin mais trop long.
@@ -42,7 +45,8 @@ class UserLoginRepository
 
     }
 
-    public function findByEmail($userLogin){
+    public function findByEmail($userLogin)
+    {
         $dbh=Connection::getConnection();
         $sql = "SELECT `id`, `password` FROM  `user_login` WHERE `email` = :email";
         $sth = $dbh->prepare($sql);

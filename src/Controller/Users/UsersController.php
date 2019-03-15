@@ -7,6 +7,7 @@ use PHPInitiation\Model\User\User;
 use PHPInitiation\Model\User\UserAvatar;
 use PHPInitiation\Model\User\UserInfo;
 use PHPInitiation\Model\User\UserLogin;
+use PHPInitiation\Repository\UserInfosRepository;
 use PHPInitiation\Repository\UserLoginRepository;
 use PHPInitiation\Validator\ValidatorInfo;
 use PHPInitiation\Validator\ValidatorSignin;
@@ -47,7 +48,11 @@ class UsersController extends Controller
                 try {
 
                     $repository = new userLoginRepository();
-                    $repository->persist($userLogin);
+                    $userId = $repository->persist($userLogin);
+                    $userInfo->setIdUser($userId);
+                    $repositoryInfos = new UserInfosRepository();
+                    $repositoryInfos->persist($userInfo);
+
                     header('Location: login');
                     exit;
 
@@ -86,6 +91,11 @@ class UsersController extends Controller
 
             $repository = new userLoginRepository();
             $users = $repository->findAll();
+
+
+
+
+
 
         }catch(\PDOException $e){
 
@@ -132,6 +142,12 @@ class UsersController extends Controller
 
     public function delete()
     {
+
+    }
+
+    public function single($id)
+    {
+        die("hello");
 
     }
 }

@@ -12,6 +12,11 @@ namespace PHPInitiation\Model\User;
 class UserInfo
 {
     private
+
+        /**
+         * @var int
+         */
+$idUser,
     /**
      * @var string
      */
@@ -23,11 +28,28 @@ $firstName,
     /*
      * @var string
      */
-$job,
+$avatar,
     /**
      * @var string
      */
 $phone;
+
+    /**
+     * @param int $idUser
+     */
+    public function setIdUser(int $idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+
+    /**
+     * @return int|null
+     */
+    public function getIdUser(): ?int
+    {
+        return $this->idUser;
+    }
 
 
     /**
@@ -35,7 +57,7 @@ $phone;
      */
 public function setLastName(string $lastName)
     {
-        $this->lastname = $lastName;
+        $this->lastName = $lastName;
     }
 
     /**
@@ -65,17 +87,17 @@ public function setLastName(string $lastName)
     /**
      * @param string $job
      */
-    public function setJob(string $job)
+    public function setAvatard(string $avatar)
     {
-        $this->job = $job;
+        $this->avatar = $avatar;
     }
 
     /**
      * @return string|null
      */
-    public function getJob(): ?string
+    public function getAvatar(): ?string
     {
-        return $this->job;
+        return $this->avatar;
     }
 
     /**

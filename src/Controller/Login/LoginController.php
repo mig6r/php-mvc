@@ -20,7 +20,7 @@ class LoginController extends Controller
 {
     public function login(){
 
-        session_start();
+
 
         if ($this->session("user")){
             header("location: ./");
@@ -45,7 +45,12 @@ class LoginController extends Controller
                     $users = $repository->findByEmail($userLogin);
 
                     if ($users && password_verify($userLogin->getPassword(), $users[0]->getPassword())) {
-                        $this->session("user", ["id" => $users[0]->getId()]);
+                        $this->session("user", [
+                            "id" => $users[0]->getId(),
+                            "token" => md5(
+                                filter_input(INPUT_SERVER, "HTTP_USER_AGENT")
+                                .filter_input(INPUT_SERVER, "REMOTE_ADDR")
+                        ) ]);
                         header('Location: users');
                         exit;
                     }

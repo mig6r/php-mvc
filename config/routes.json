@@ -23,6 +23,16 @@
   "method": "GET"
 
 },
+
+  "user_single": {
+
+    "url": "/user/(\\d+)",
+    "controller": "Users/UsersController",
+    "action": "single",
+    "method": "GET"
+
+  },
+
   "users_create": {
 
     "url": "/signin",

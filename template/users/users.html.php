@@ -5,6 +5,7 @@
     <div class="list-group">
 
         <?php foreach($users as $value): ?>
+        <?php ?>
             <a href="#" class="list-group-item list-group-item-action"><?= $value->getEmail(); ?></a>
         <?php endForeach ?>
     
