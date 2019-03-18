@@ -1,4 +1,4 @@
-# PHP Sigin / Login / Logout
+# PHP Signin / Login / Logout
 
 Routing controller / MVC
 
